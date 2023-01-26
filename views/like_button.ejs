@@ -1,0 +1,21 @@
+<html lang="en-gb">
+<%- include('_head') -%>
+    <%- include('_header') -%>
+
+        <body>
+            <h1>Like Post</h1>
+            <form method="post" action="/:postId/like/">
+                <label>
+                    User ID:
+                    <input type="text" name="userID" required />
+                </label>
+                <label>
+                    Post ID URL:
+                    <input type="text" name="postID" required />
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+        </body>
+        <%- include('_footer') -%>
+
+</html>
