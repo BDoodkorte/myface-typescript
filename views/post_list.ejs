@@ -1,15 +1,22 @@
 <html lang="en-gb">
 <%- include('_head') -%>
-<%- include('_header') -%>
-<body>
-<h1>Posts</h1>
-<ol>
-    <% postList.results.forEach(function(post) {%>
-        <li>
-            <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
-        </li>
-    <% }); %>
-</ol>
-</body>
-<%- include('_footer') -%>
+    <%- include('_header') -%>
+
+        <body>
+            <h1>Posts</h1>
+            <ol>
+                <% postList.results.forEach(function(post) {%>
+                    <li>
+                        <%= Object.values(post).slice(0, 4) %> -
+                            <!-- <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %> - -->
+                            <%=Object.values(post.postedBy) %> -
+                                <!-- <%=post.likedBy[0]%> not yet working -->
+                                    <!-- <%=post.dislikedBy%> not yet working -->
+                    </li>
+                    <% }); %>
+            </ol>
+        </body>
+        <%- include('_footer') -%>
+
 </html>
+<!-- post. -->
