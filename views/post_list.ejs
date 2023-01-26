@@ -7,15 +7,26 @@
             <ol>
                 <% postList.results.forEach(function(post) {%>
                     <li>
-                        <%= Object.values(post).slice(0, 4) %> -
-                            <!-- <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %> - -->
-                            <%=Object.values(post.postedBy) %>
-                                <!-- <%=post.likedBy[0]%> not yet working -->
-                                <!-- <%=post.dislikedBy%> not yet working -->
+
+                        <%= Object.values(post).slice(0, 2) %>
+                            <br>
+                            <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
+                                <br>
+                                <%=Object.values(post.postedBy).slice(0, 3) %>
+                                    <!-- <%=post.likedBy[0]%> not yet working -->
+                                    <!-- <%=post.dislikedBy%> not yet working -->
+                                    <br>
+                                    <img src=<%=post.imageUrl %> width="300" alt="User uploaded image">
                     </li>
                     <% }); %>
             </ol>
+            <%if (postList.next) { %>
+                <a href="<%= postList.next %>">Next</a>
+                <% } %>
+                    <%if (postList.previous) { %>
+                        <a href="<%= postList.previous %>">Previous</a>
+                        <% } %>
         </body>
         <%- include('_footer') -%>
+
 </html>
-<!-- post. -->
