@@ -9,14 +9,13 @@
                     <li>
                         <%= Object.values(post).slice(0, 4) %> -
                             <!-- <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %> - -->
-                            <%=Object.values(post.postedBy) %> -
+                            <%=Object.values(post.postedBy) %>
                                 <!-- <%=post.likedBy[0]%> not yet working -->
-                                    <!-- <%=post.dislikedBy%> not yet working -->
+                                <!-- <%=post.dislikedBy%> not yet working -->
                     </li>
                     <% }); %>
             </ol>
         </body>
         <%- include('_footer') -%>
-
 </html>
 <!-- post. -->
