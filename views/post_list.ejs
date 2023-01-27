@@ -4,7 +4,7 @@
 
         <body>
             <h1>Posts</h1>
-            <ol>
+            <ul id = "postlist">
                 <% postList.results.forEach(function(post) {%>
                     <li>
 
@@ -24,17 +24,16 @@
                                                                 <%= post.dislikedBy[i].name %>,
                                                                     <% }} %>
                                     </p>
-                                    <br>
-                                    <img src=<%=post.imageUrl %> width="300" alt="User uploaded image"><br>
+                                    <img src=<%=post.imageUrl %> alt="User uploaded image"><br>
                                     <form method="post" action="/posts/<%=post.id%>/like/">
-                                        <button type="submit"> &#128009</button>
+                                        <button type="submit" id="likebutton">Like</button>
                                     </form>
                                     <form method="post" action="/posts/<%=post.id%>/like/">
-                                        <button type="submit">&#128701</button>
+                                        <button type="submit" id="dislikebutton">Dislike</button>
                                     </form>
                     </li>
                     <% }); %>
-            </ol>
+            </ul>
             <%if (postList.next) { %>
                 <a href="<%= postList.next %>">Next</a>
                 <% } %>

@@ -1,1 +1,28 @@
 /* Add your styles here. */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightblue;
+}
+
+#dislikebutton {
+    background-color: lightcoral;
+}
+
+#likebutton {
+    background-color: lightgreen;
+}
+
+#postlist {
+    list-style: none;
+}
+
+
+h1 {
+    font-size: 18px;
+    text-align: center;
+}
+
+img {
+    width: 200;
+}
