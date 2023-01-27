@@ -4,9 +4,9 @@
 
         <body>
             <h1>Posts</h1>
-            <ul id = "postlist">
+            <ul id="postlist">
                 <% postList.results.forEach(function(post) {%>
-                    <li>
+                    <li class="container">
 
                         <%= Object.values(post).slice(1, 2) %>
                             <br>
@@ -25,11 +25,11 @@
                                                                     <% }} %>
                                     </p>
                                     <img src=<%=post.imageUrl %> alt="User uploaded image"><br>
-                                    <form method="post" action="/posts/<%=post.id%>/like/">
-                                        <button type="submit" id="likebutton">Like</button>
+                                    <form method="post" class="buttonform" action="/posts/<%=post.id%>/like/">
+                                        <button type="submit" class="buttons" id="likebutton">Like</button>
                                     </form>
-                                    <form method="post" action="/posts/<%=post.id%>/like/">
-                                        <button type="submit" id="dislikebutton">Dislike</button>
+                                    <form method="post" class="buttonform" action="/posts/<%=post.id%>/like/">
+                                        <button type="submit" class="buttons" id="dislikebutton">Dislike</button>
                                     </form>
                     </li>
                     <% }); %>

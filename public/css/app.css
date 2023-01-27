@@ -5,24 +5,122 @@ body {
     background-color: lightblue;
 }
 
+#postlist {
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    padding-bottom: 1%;
+}
+
+.links {
+    position: fixed;
+}
+
+.buttonform {
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-bottom: 3%;
+    margin: 0;
+    display: inline-block;
+}
+
+.buttons {
+    width: 50px;
+}
+
+@keyframes LIKE_ANIMATION {
+    0% {
+        background: lightgreen
+    }
+
+    50% {
+        background: green
+    }
+
+    100% {
+        background: darkgreen
+    }
+}
+
+@keyframes DISLIKE_ANIMATION {
+    0% {
+        background: lightcoral
+    }
+
+    50% {
+        background: red
+    }
+
+    100% {
+        background: darkred
+    }
+}
+
+
 #dislikebutton {
     background-color: lightcoral;
+}
+
+#dislikebutton:hover {
+    background: darkred;
+    animation: DISLIKE_ANIMATION 4s;
 }
 
 #likebutton {
     background-color: lightgreen;
 }
 
-#postlist {
-    list-style: none;
+#likebutton:hover {
+    background: darkgreen;
+    animation: LIKE_ANIMATION 4s;
 }
 
+/* PC screens */
+/* Multiple posts on same row */
 
-h1 {
-    font-size: 18px;
-    text-align: center;
+/* Tablet screens */
+@media only screen and (max-width: 1000px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    body {
+        text-align: center;
+    }
+
+    img {
+        width: 400;
+    }
 }
 
-img {
-    width: 200;
+/* Large Mobile screens */
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    body {
+        text-align: center;
+    }
+
+    img {
+        width: 300;
+    }
+}
+
+/* Mobile screens */
+@media only screen and (max-width: 450px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    body {
+        text-align: center;
+    }
+
+    img {
+        width: 200;
+    }
 }
