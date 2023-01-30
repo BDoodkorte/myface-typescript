@@ -1,8 +1,56 @@
 <html lang="en-gb">
 <%- include('_head') -%>
-<%- include('_header') -%>
-<body>
-<h1><%= name %></h1>
-</body>
-<%- include('_footer') -%>
+    <%- include('_header') -%>
+        <div class="userprofile">
+
+            <body id="profileBody">
+
+                <img class="userprofilecoverimg" id="coverimg" src="<%= coverImageUrl %>" alt="Cover image">
+
+                <img id="userprofileimage" src="<%= profileImageUrl %>" alt="Profile image">
+
+                <div id="userinfo">
+                    <h3>
+                        <%= name %>
+                    </h3>
+                    <p>
+                       <b> <%= username %> </b>
+                    </p>
+                    <p>
+                        <%= email %>
+                    </p>
+                </div>
+
+
+
+                <h1 class="userposts">
+                    <%= name %>'s Posts
+                </h1>
+
+                <ul class="ouruserposts">
+                        <li>
+                                <%= posts[0].createdAt %>
+    
+                                        <img src=<%=posts[0].imageUrl %> onerror="src =
+                                        'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
+                                        alt="User uploaded image"><br>
+                        </li>
+                </ul>
+
+                <h1 class="userlikedposts">
+                    Posts <%= name %> Liked
+                </h1>
+
+                <h1 class="userdislikedposts">
+                    Posts <%= name %> Disliked
+                </h1>
+
+
+
+            </body>
+
+            <%- include('_footer') -%>
+        </div>
+
+
 </html>

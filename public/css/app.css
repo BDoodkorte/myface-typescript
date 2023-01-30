@@ -1,26 +1,42 @@
 /* Add your styles here. */
 
 a {
-    color: rgb(0, 17, 104);
+    color: rgb(77, 99, 209);
 }
 
 a:visited {
-    color: rgb(86, 0, 126)
+    color: rgb(222, 170, 247)
 }
 
 a:hover {
     color: rgb(211, 0, 105);
-  }
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(170, 185, 230);
 }
 
-h1{
-    border-bottom-style: double;
-    border-width: thick;
-    border-color: rgb(39, 51, 84);
+footer {
+    background-color: #151820;
+    border-top: 1px solid rgb(255, 255, 255);
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+
+}
+
+.footerimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: auto;
+
+}
+
+body {
+    font-family: "Segoe UI", Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: rgb(37, 42, 49);
+    margin: 0;
 }
 
 #postlist {
@@ -42,7 +58,7 @@ img {
     padding-bottom: 3%;
     margin: 0;
     display: inline-block;
-    
+
 }
 
 .buttons {
@@ -142,9 +158,9 @@ img {
 }
 
 /* Large Mobile screens */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 650px) {
     h1 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     #postbody {
@@ -156,20 +172,6 @@ img {
     }
 }
 
-/* Mobile screens */
-@media only screen and (max-width: 450px) {
-    h1 {
-        font-size: 18px;
-    }
-
-    #postbody {
-        text-align: center;
-    }
-
-    img {
-        width: 200;
-    }
-}
 
 
 
@@ -221,7 +223,7 @@ img {
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
-        margin-left: 5;
+    margin-left: 5;
 }
 
 /* PC screens */
@@ -266,10 +268,17 @@ img {
     }
 }
 
-/* Large Mobile screens */
-@media only screen and (max-width: 800px) {
+/* Mobile screens */
+@media only screen and (max-width: 650px) {
     h1 {
-        font-size: 22px;
+        font-size: 20px;
+        font-weight: normal;
+        margin-left: 4%;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: normal;
     }
 
     li {
@@ -280,26 +289,102 @@ img {
         text-align: center;
     }
 
+    #profileBody {
+        font-size: 14px;
+    }
+
     img {
         width: 300;
     }
 }
 
-/* Mobile screens */
-@media only screen and (max-width: 450px) {
-    h1 {
-        font-size: 18px;
-    }
 
-    li {
-        font-size: 14px;
-    }
 
-    #userbody {
-        text-align: center;
-    }
+/* User profile page */
+.userprofile {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 0.8fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: auto;
+}
 
-    img {
-        width: 200;
-    }
+
+.userprofilecoverimg {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#coverimg {
+    width: 100%;
+    padding: 0%
+}
+
+.profileIntro {
+    background-color: rgb(37, 42, 49, 0.56);
+}
+
+#userinfo {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-size: smaller;
+    background-color: rgb(37, 42, 49, 0.56);
+
+    padding-left: 23%;
+
+}
+
+#userprofileimage {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    display: block;
+    margin-left: 25%;
+    margin-right: auto;
+    margin-bottom: 1px;
+
+    width: 150%;
+    border: solid;
+    border-radius: 50%;
+    border-color: #ffffff;
+    position: relative;
+}
+
+
+
+
+.userposts {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.userlikedposts {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.userdislikedposts {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.ouruserposts {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin: 0;
+    padding: 0;
+
 }

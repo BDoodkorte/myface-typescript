@@ -11,7 +11,7 @@
                             <img id="usrimg" src=<%=user.profileImageUrl %> alt="User uploaded image">
                         </div>
                         <div class="containerName">
-                            <%= user.name %>
+                            <a href = "/users/<%= user.id %>"><%= user.name %></a>
                         </div>
                         <div class="containerEmail">
                             <%= user.email %>
