@@ -2,11 +2,11 @@
 <%- include('_head') -%>
     <%- include('_header') -%>
 
-        <body>
+        <body id="postbody">
             <h1>Posts</h1>
-            <ul id="postlist">
+            <ul id="postlist" class="container">
                 <% postList.results.forEach(function(post) {%>
-                    <li class="container">
+                    <li>
 
                         <%= Object.values(post).slice(1, 2) %>
                             <br>
@@ -14,15 +14,15 @@
                                 <br>
                                 <%=Object.values(post.postedBy).slice(1, 3) %>
                                     <p> Liked by: <%=post.likedBy.length%>
-                                            <% for (let i=0; i < post.likedBy.length; i++) { if (post.likedBy[i]) { %>
+                                            <!-- <% for (let i=0; i < post.likedBy.length; i++) { if (post.likedBy[i]) { %>
                                                 <%= post.likedBy[i].name %>,
-                                                    <% }} %>
+                                                    <% }} %> -->
                                                         <br>
                                                         Disliked by: <%=post.dislikedBy.length%>
-                                                            <% for (let i=0; i < post.dislikedBy.length; i++) { if
+                                                            <!-- <% for (let i=0; i < post.dislikedBy.length; i++) { if
                                                                 (post.dislikedBy[i]) { %>
                                                                 <%= post.dislikedBy[i].name %>,
-                                                                    <% }} %>
+                                                                    <% }} %> -->
                                     </p>
                                     <img src=<%=post.imageUrl %> alt="User uploaded image"><br>
                                     <form method="post" class="buttonform" action="/posts/<%=post.id%>/like/">

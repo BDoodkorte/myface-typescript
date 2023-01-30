@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: lightblue;
+    background-color: rgb(222, 223, 162);
 }
 
 #postlist {
@@ -29,6 +29,7 @@ img {
 .buttons {
     width: 50px;
 }
+
 
 @keyframes LIKE_ANIMATION {
     0% {
@@ -78,7 +79,47 @@ img {
 }
 
 /* PC screens */
+@media only screen and (min-width: 1000px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #postbody {
+        text-align: center;
+        background-color: rgb(222, 223, 162);
+    }
+
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 33% 34% 33%;
+        grid-template-rows: 25% 25% 25% 25%;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+
 /* Multiple posts on same row */
+@media only screen and (max-width: 1000px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #postbody {
+        text-align: center;
+        background-color: rgba(44, 138, 141, 0.527)
+    }
+
+    img {
+        width: 400;
+    }
+}
+
 
 /* Tablet screens */
 @media only screen and (max-width: 1000px) {
@@ -86,7 +127,7 @@ img {
         font-size: 24px;
     }
 
-    body {
+    #postbody {
         text-align: center;
         background-color: rgb(66, 154, 146);
     }
@@ -102,7 +143,7 @@ img {
         font-size: 22px;
     }
 
-    body {
+    #postbody {
         text-align: center;
         background-color: rgb(194, 172, 104);
     }
@@ -118,7 +159,7 @@ img {
         font-size: 18px;
     }
 
-    body {
+    #postbody {
         text-align: center;
         background-color: rgb(132, 75, 136);
     }
