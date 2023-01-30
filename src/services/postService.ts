@@ -59,3 +59,21 @@ async function toPostModel(post: Post): Promise<PostModel> {
     dislikedBy: await getByPostInteraction(post.id, "DISLIKE", 1, 10),
   };
 }
+
+// FUNCTION CHECKS IF IMAGE EXISTS
+// export async function checkIfImageExists(post: Post, callback: (arg0: boolean) => void) {
+//   const img = new Image();
+//   img.src = post.imageUrl;
+  
+//   if (img.complete) {
+//     callback(true);
+//   } else {
+//     img.onload = () => {
+//       callback(true);
+//     };
+    
+//     img.onerror = () => {
+//       callback(false);
+//     };
+//   }
+// }
