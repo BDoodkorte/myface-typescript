@@ -54,11 +54,13 @@
                                 <ul class=" ouruserlikes">
                                         <% for(let i=0; i<5; i++) { %>
                                             <li class="specificposts">
-                                                <img id="userpostimg" src=<%=likes[i].imageUrl %>  onerror="src =
+                                                <img id="userpostimg" src=<%=likes[i].imageUrl %> onerror="src =
                                                 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
                                                 alt="User uploaded image">
                                                 <div id="postUserName">
-                                                    <%= likes[i].id %>
+                                                    <a href="/users/<%= likes[i].id %>">
+                                                        <%= likes[i].id %>
+                                                    </a>
                                                 </div>
                                                 <div id="userpostdate">
                                                     <%= likes[i].createdAt %>
@@ -76,23 +78,26 @@
                                 </h1>
 
                                 <ul class=" ouruserdislikes">
-                                    <% for(let i=0; i<5; i++) { %>
-                                    <li class="specificposts">
-                                          <img id="userpostimg" src=<%=dislikes[i].imageUrl %>  onerror="src =
-                                          'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
-                                          alt="User uploaded image">
-                                          <div id="postUserName">
-                                         <%= dislikes[i].id %>
-                                          </div>
-                                          <div id="userpostdate">
-                                          <%= dislikes[i].createdAt %>
-                                          </div>
-                                          <div id="userpostmessage">
-                                          <%= dislikes[i].message %>
-                                          </div>
-                                    </li>
-                                     <% }; %>
-                                 </ul>
+                                                        <% for(let i=0; i<5; i++) { %>
+                                                            <li class="specificposts">
+                                                                <img id="userpostimg" src=<%=dislikes[i].imageUrl %>
+                                                                onerror="src =
+                                                                'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
+                                                                alt="User uploaded image">
+                                                                <div id="postUserName">
+                                                                    <a href="/users/<%= dislikes[i].id %>">
+                                                                        <%= dislikes[i].id %>
+                                                                    </a>
+                                                                </div>
+                                                                <div id="userpostdate">
+                                                                    <%= dislikes[i].createdAt %>
+                                                                </div>
+                                                                <div id="userpostmessage">
+                                                                    <%= dislikes[i].message %>
+                                                                </div>
+                                                            </li>
+                                                            <% }; %>
+                                                                </ul>
 
             </body>
 
