@@ -1,108 +1,109 @@
 <html lang="en-gb">
 <%- include('_head') -%>
     <%- include('_header') -%>
-        <div class="userprofile">
 
-            <body id="profileBody">
-                <!-- Displays the user details: cover image, username, name, and profile pic  -->
-                <img class="userprofilecoverimg" id="coverimg" src="<%= coverImageUrl %>" alt="Cover image">
+    <div class="userprofile">
 
-                <img id="userprofileimage" src="<%= profileImageUrl %>" alt="Profile image">
+        <body id="profileBody">
+            <!-- Displays the user details: cover image, username, name, and profile pic  -->
+            <img class="userprofilecoverimg" id="coverimg" src="<%= coverImageUrl %>" alt="Cover image">
 
-                <div id="userinfo">
-                    <h3>
-                        <%= name %>
-                    </h3>
-                    <p>
-                        <b>
-                            <%= username %>
-                        </b>
-                    </p>
-                    <p>
-                        <%= email %>
-                    </p>
-                </div>
+            <img id="userprofileimage" src="<%= profileImageUrl %>" alt="Profile image">
 
-                <!-- Displays the user's posts  -->
-                <h1 class="userposts">
-                    <%= name.split(" ")[0] %>'s Posts
+            <div id="userinfo">
+                <h3>
+                    <%= name %>
+                </h3>
+                <p>
+                    <b>
+                        <%= username %>
+                    </b>
+                </p>
+                <p>
+                    <%= email %>
+                </p>
+            </div>
+
+            <!-- Displays the user's posts  -->
+            <h1 class="userposts">
+                <%= name.split(" ")[0] %>'s Posts
                 </h1>
 
                 <ul class=" ouruserposts">
-                        <% for(let i=0; i<5; i++) { %>
-                            <li class="specificposts">
-                                <img id="userpostimg" src=<%=posts[i].imageUrl %> onerror="src =
-                                'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
-                                alt="User uploaded image">
-                                <div id="postUserName">
-                                    <%= username %>
-                                </div>
-                                <div id="userpostdate">
-                                    <%= posts[i].createdAt.toLocaleDateString() %>
-                                </div>
-                                <div id="userpostmessage">
-                                    <%= posts[i].message %>
-                                </div>
-                            </li>
-                            <% }; %>
-                                </ul>
+                    <% for(let i=0; i<5; i++) { %>
+                        <li class="specificposts">
+                            <img id="userpostimg" src=<%=posts[i].imageUrl %> onerror="src =
+                            'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
+                            alt="User uploaded image">
+                            <div id="postUserName">
+                                <%= username %>
+                            </div>
+                            <div id="userpostdate">
+                                <%= posts[i].createdAt.toLocaleDateString() %>
+                            </div>
+                            <div id="userpostmessage">
+                                <%= posts[i].message %>
+                            </div>
+                        </li>
+                        <% }; %>
+                            </ul>
 
-                                <!-- Displays the user's liked posts  -->
-                                <h1 class="userlikedposts">
-                                    Posts <%= name.split(" ")[0] %> Liked
+                            <!-- Displays the user's liked posts  -->
+                            <h1 class="userlikedposts">
+                                Posts <%= name.split(" ")[0] %> Liked
                                 </h1>
                                 <ul class=" ouruserlikes">
-                                        <% for(let i=0; i<5; i++) { %>
-                                            <li class="specificposts">
-                                                <img id="userpostimg" src=<%=likes[i].imageUrl %> onerror="src =
-                                                'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
-                                                alt="User uploaded image">
-                                                <div id="postUserName">
-                                                    <a href="/users/<%= likes[i].id %>">
-                                                        <%= likes[i].id %>
-                                                    </a>
-                                                </div>
-                                                <div id="userpostdate">
-                                                    <%= likes[i].createdAt %>
-                                                </div>
-                                                <div id="userpostmessage">
-                                                    <%= likes[i].message %>
-                                                </div>
-                                            </li>
-                                            <% }; %>
-                                                </ul>
+                                    <% for(let i=0; i<5; i++) { %>
+                                        <li class="specificposts">
+                                            <img id="userpostimg" src=<%=likes[i].imageUrl %> onerror="src =
+                                            'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
+                                            alt="User uploaded image">
+                                            <div id="postUserName">
+                                                <a href="/users/<%= likes[i].id %>">
+                                                    <%= likes[i].id %>
+                                                </a>
+                                            </div>
+                                            <div id="userpostdate">
+                                                <%= likes[i].createdAt %>
+                                            </div>
+                                            <div id="userpostmessage">
+                                                <%= likes[i].message %>
+                                            </div>
+                                        </li>
+                                        <% }; %>
+                                            </ul>
 
-                                                <!-- Displays the user's disliked posts  -->
-                                                <h1 class="userdislikedposts">
-                                                    Posts <%= name.split(" ")[0] %> Disliked
+                                            <!-- Displays the user's disliked posts  -->
+                                            <h1 class="userdislikedposts">
+                                                Posts <%= name.split(" ")[0] %> Disliked
                                 </h1>
 
                                 <ul class=" ouruserdislikes">
-                                                        <% for(let i=0; i<5; i++) { %>
-                                                            <li class="specificposts">
-                                                                <img id="userpostimg" src=<%=dislikes[i].imageUrl %>
-                                                                onerror="src =
-                                                                'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
-                                                                alt="User uploaded image">
-                                                                <div id="postUserName">
-                                                                    <a href="/users/<%= dislikes[i].id %>">
-                                                                        <%= dislikes[i].id %>
-                                                                    </a>
-                                                                </div>
-                                                                <div id="userpostdate">
-                                                                    <%= dislikes[i].createdAt %>
-                                                                </div>
-                                                                <div id="userpostmessage">
-                                                                    <%= dislikes[i].message %>
-                                                                </div>
-                                                            </li>
-                                                            <% }; %>
-                                                                </ul>
+                                                    <% for(let i=0; i<5; i++) { %>
+                                                        <li class="specificposts">
+                                                            <img id="userpostimg" src=<%=dislikes[i].imageUrl %>
+                                                            onerror="src =
+                                                            'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
+                                                            alt="User uploaded image">
+                                                            <div id="postUserName">
+                                                                <a href="/users/<%= dislikes[i].id %>">
+                                                                    <%= dislikes[i].id %>
+                                                                </a>
+                                                            </div>
+                                                            <div id="userpostdate">
+                                                                <%= dislikes[i].createdAt %>
+                                                            </div>
+                                                            <div id="userpostmessage">
+                                                                <%= dislikes[i].message %>
+                                                            </div>
+                                                        </li>
+                                                        <% }; %>
+                                                            </ul>
 
-            </body>
+        </body>
 
-            <div class="userprofilefooter"><%- include('_footer') -%></div>
-        </div>
+        <div class="userprofilefooter"><%- include('_footer') -%></div>
+    </div>
 
 
 </html>
