@@ -14,7 +14,9 @@
                         <%= name %>
                     </h3>
                     <p>
-                       <b> <%= username %> </b>
+                        <b>
+                            <%= username %>
+                        </b>
                     </p>
                     <p>
                         <%= email %>
@@ -22,19 +24,23 @@
                 </div>
 
 
-
                 <h1 class="userposts">
                     <%= name %>'s Posts
                 </h1>
 
                 <ul class="ouruserposts">
-                        <li>
-                                <%= posts[0].createdAt %>
-    
-                                        <img src=<%=posts[0].imageUrl %> onerror="src =
-                                        'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
-                                        alt="User uploaded image"><br>
-                        </li>
+                    <li class="specificposts">
+                        <img id="userpostimg" src=<%=posts[0].imageUrl %> alt="User uploaded image">
+                        <div id="postUserName">
+                            <%= username %>
+                        </div>
+                        <div id="userpostdate">
+                            <%= posts[0].createdAt.toLocaleDateString() %>
+                        </div>
+                                    <div id="userpostmessage">
+                                        <%= posts[0].message %>
+                                    </div>
+                    </li>
                 </ul>
 
                 <h1 class="userlikedposts">
