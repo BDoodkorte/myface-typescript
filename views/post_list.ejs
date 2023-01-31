@@ -4,9 +4,10 @@
 
         <body id="postbody">
             <h1>Posts</h1>
+            <button id="postlist-button">Click me to change background colour!</button>
             <ul id="postlist" class="container">
                 <% postList.results.forEach(function(post) {%>
-                    <li>
+                    <li class="individualpostlist">
 
                         <%= Object.values(post).slice(1, 2) %>
                             <br>
