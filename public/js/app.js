@@ -1,12 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // const backgroundButton = document.getElementById("postlist-button");
-  // backgroundButton.addEventListener("click", function () {
-  //   const postBackground = document.getElementsByClassName("individualpostlist");
-  //   for(let i = 0; i < postBackground.length; i++) {
-  //     postBackground[i].style.background = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
-  //   };
-  // })
 
   const menuButton = document.getElementById("menu-button");
 
@@ -50,6 +43,26 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 });
 
+document.addEventListener("keydown", (e) => {
+  if (document.getElementById("ourmenuoptions").classList.contains("menuoptionblock") && e.key === "Escape") {
+    const userHeader = document.getElementById("ourmenuoptions");
+    const userButton = document.getElementById("menu-button");
+
+    userHeader.classList.remove("menuoptionblock");
+    userHeader.classList.add("menuoptionnone");
+
+    userButton.style.display = "block";
+  }
+});
+
+
+
+function colourChanger() {
+  const postBackground = document.getElementsByClassName("individualpostlist");
+  for (let i = 0; i < postBackground.length; i++) {
+    postBackground[i].style.background = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+  };
+}
 
 
 

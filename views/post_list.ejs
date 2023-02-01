@@ -1,10 +1,11 @@
 <html lang="en-gb">
 <%- include('_head') -%>
+    <div id="entirepage">
     <%- include('_header') -%>
 
         <body id="postbody">
             <h1>Posts</h1>
-            <button id="postlist-button">Click me to change background colour!</button>
+            <button id="postlist-button" onclick="colourChanger()">Click me to change background colour!</button>
             <ul id="postlist" class="container">
                 <% postList.results.forEach(function(post) {%>
                     <li class="individualpostlist">
@@ -13,31 +14,33 @@
                             <br>
                             <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
                                 <br>
-                                <a href = "/users/<%= post.postedBy.id %>"><%= post.postedBy.name %></a>
-                                    <p> Liked by: <%=post.likedBy.length%>
-                                            <!-- <% for (let i=0; i < post.likedBy.length; i++) { if (post.likedBy[i]) { %>
+                                <a href="/users/<%= post.postedBy.id %>">
+                                    <%= post.postedBy.name %>
+                                </a>
+                                <p> Liked by: <%=post.likedBy.length%>
+                                        <!-- <% for (let i=0; i < post.likedBy.length; i++) { if (post.likedBy[i]) { %>
                                                 <%= post.likedBy[i].name %>,
                                                     <% }} %> -->
-                                            <br>
-                                            Disliked by: <%=post.dislikedBy.length%>
-                                                <!-- <% for (let i=0; i < post.dislikedBy.length; i++) { if
+                                        <br>
+                                        Disliked by: <%=post.dislikedBy.length%>
+                                            <!-- <% for (let i=0; i < post.dislikedBy.length; i++) { if
                                                                 (post.dislikedBy[i]) { %>
                                                                 <%= post.dislikedBy[i].name %>,
                                                                     <% }} %> -->
-                                    </p>
+                                </p>
 
 
 
-                                    <img src=<%=post.imageUrl %> onerror="src =
-                                    'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
-                                    alt="User uploaded image"><br>
+                                <img src=<%=post.imageUrl %> onerror="src =
+                                'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';"
+                                alt="User uploaded image"><br>
 
-                                    <form method="post" class="buttonform" action="/posts/<%=post.id%>/like/">
-                                        <button type="submit" class="buttons" id="likebutton">Like</button>
-                                    </form>
-                                    <form method="post" class="buttonform" action="/posts/<%=post.id%>/like/">
-                                        <button type="submit" class="buttons" id="dislikebutton">Dislike</button>
-                                    </form>
+                                <form method="post" class="buttonform" action="/posts/<%=post.id%>/like/">
+                                    <button type="submit" class="buttons" id="likebutton">Like</button>
+                                </form>
+                                <form method="post" class="buttonform" action="/posts/<%=post.id%>/like/">
+                                    <button type="submit" class="buttons" id="dislikebutton">Dislike</button>
+                                </form>
                     </li>
                     <% }); %>
             </ul>
@@ -49,5 +52,5 @@
                         <% } %>
         </body>
         <%- include('_footer') -%>
-
+    </div>
 </html>
