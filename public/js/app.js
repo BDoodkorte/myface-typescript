@@ -34,15 +34,34 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 
 
-    /*
-    if (userHeader.classList.contains("menuoptionnone")) {
-      userHeader.classList.remove("menuoptionnone");
-      userHeader.classList.add("menuoptionblock");
-    } else if (userHeader.classList.contains("menuoptionblock")) {
+
+
+  window.addEventListener('click', function (e) {
+    if (document.getElementById("ourmenuoptions").classList.contains("menuoptionblock") && (!document.getElementById('ourmenuoptions').contains(e.target)) && (!document.getElementById('menu-button').contains(e.target))) {
+      // alert("Clicked outside l2 and logo-menu");
+      const userHeader = document.getElementById("ourmenuoptions");
+      const userButton = document.getElementById("menu-button");
+
       userHeader.classList.remove("menuoptionblock");
       userHeader.classList.add("menuoptionnone");
+
+      userButton.style.display = "block";
     }
-    */
+  })
+});
+
+
+
+
+/*
+if (userHeader.classList.contains("menuoptionnone")) {
+  userHeader.classList.remove("menuoptionnone");
+  userHeader.classList.add("menuoptionblock");
+} else if (userHeader.classList.contains("menuoptionblock")) {
+  userHeader.classList.remove("menuoptionblock");
+  userHeader.classList.add("menuoptionnone");
+}
+*/
 
 
     // class="menuoptionblock"
@@ -53,5 +72,3 @@ document.addEventListener("DOMContentLoaded", function () {
     //   userHeader.style.display = "block";
     // }
 
-
-});
